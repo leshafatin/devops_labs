@@ -64,7 +64,7 @@
     ➜ cd lab1
     ➜ echo Hello from PC3 > test.txt
 
-    ➜ scp 22 ./test.txt a.fatin@192.168.3.9:media/
+    ➜ scp  ./test.txt a.fatin@192.168.3.9:media/
 
     Password:
      test.txt                                                          100%   15     2.2KB/s   00:00
@@ -83,3 +83,79 @@
     ```
 
 ### Готово!
+
+## Задание со звездочкой
+
+1.  На ПК-3 (win) создаем пару ключей:
+
+    ```
+     ssh-keygen
+     Generating public/private rsa key pair.
+     Enter file in which to save the key (C:\Users\79634/.ssh/id_rsa):
+     Enter passphrase (empty for no passphrase):
+     Enter same passphrase again:
+     Your identification has been saved in C:\Users\79634/.ssh/id_rsa
+     Your public key has been saved in C:\Users\79634/.ssh/id_rsa.pub
+     ...
+    ```
+
+2.  Передадим ключи на ПК2 (MacOS), к сожалению, не пользуясь удобной утилитой:
+
+    ```
+    C:\Users\79634>type C:\Users\79634\.ssh\id_rsa.pub | ssh leshafatin@192.168.3.6 "cat >> .ssh/authorized_keys"
+    (leshafatin@192.168.3.6) Password:
+    ```
+
+3.  Создаем ключи на ПК2 и передаем на ПК1:
+
+    ```
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+    ⚡️ ssh-keygen
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/Users/leshafatin/.ssh/id_rsa):
+    /Users/leshafatin/.ssh/id_rsa already exists.
+    Overwrite (y/n)? n
+
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+    ⚡️ ssh-copy-id -i ~/.ssh/id_rsa a.fatin@192.168.3.9
+    zsh: command not found: sh-copy-id
+
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+    ⚡️ ssh-copy-id -i ~/.ssh/id_rsa a.fatin@192.168.3.9
+    /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/leshafatin/.ssh/id_rsa.pub"
+    /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+    /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+    (a.fatin@192.168.3.9) Password:
+
+    Number of key(s) added: 1
+
+    Now try logging into the machine, with: "ssh 'a.fatin@192.168.3.9'"
+    and check to make sure that only the key(s) you wanted were added.
+
+    ```
+
+4.  Создаем на ПК2 файлик и передаем на ПК3:
+
+    ```
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+
+    ⚡️ echo Hello from PC3 by keys > test1.txt
+
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+    ⚡️ scp ./test1.txt a.fatin@192.168.3.9:media/
+    Enter passphrase for key '/Users/leshafatin/.ssh/id_rsa':
+    test1.txt 100% 23 4.1KB/s 00:00
+
+    leshafatin@Lesas-MacBook-Pro /Users/leshafatin
+    ⚡️ ssh a.fatin@192.168.3.9
+    Enter passphrase for key '/Users/leshafatin/.ssh/id_rsa':
+    Last login: Mon Sep 18 17:25:23 2023 from 192.168.3.6
+    ➜ ~ cd media
+    ➜ media cat test1.txt
+    Hello from PC3 by keys
+
+    ```
+
+    Стоит отметить, что видимо на ПК1 уже был сгенерирован ssh ключ (по-видимому для GitHub), поэтому нужно было вводить passpharse
+
+5.  Готово
