@@ -66,52 +66,53 @@ Yandex Managed Service for Kubernetes – сервис для управлени
 Yandex DataSphere – сервис для разработки моделей машинного обучения (ML) с удобным интерфейсом, необходимыми инструментами и динамически масштабируемыми облачными ресурсами для полного цикла разработки. ML-модели можно запускать в эксплуатацию за несколько минут без привлечения разработчиков: автоматическое создание необходимой инфраструктуры, простое управление данными в проекте, возможность подключение популярных библиотек для анализа (TensorFlow, PyTorch).  
 
 ## Итоговая таблица
-|     Product Code    |           Usage Type         |                    Analogue                  |
-|:-------------------:|:----------------------------:|:--------------------------------------------:|
-| AmazonFSx           | %ThroughputCapacity          | None                                         |
-| AmazonFSx           | %Storage                     | None                                         |
-| AmazonFSx           | %BackupUsage                 | None                                         |
-| AmazonFSx           | %DataTransfer-Regional-Bytes | None                                         |
-| AmazonGlacier       |                              | Yandex Object Storage                        |
-| AmazonGlacier       | %Bytes                       | Yandex Object Storage                        |
-| AmazonGlacier       | %ProvisionedCapacityUnit     | Yandex Object Storage                        |
-| AmazonGlacier       | %TimedStorage-ByteHrs        | Yandex Object Storage                        |
-| AmazonGlacier       | %Requests-Tier3              | Yandex Object Storage                        |
-| AmazonGlacier       | %Requests-Tier1              | Yandex Object Storage                        |
-| AmazonGlacier       | %EarlyDelete%                | Yandex Object Storage                        |
-| AmazonGuardDuty     |                              | Yandex Audit Trails + Yandex DDoS Protection |
-| AmazonGuardDuty     | %FreeEventsAnalyzed          | Yandex Audit Trails + Yandex DDoS Protection |
-| AmazonGuardDuty     | %PaidEventsAnalyzed          | Yandex Audit Trails + Yandex DDoS Protection |
-| AmazonGuardDuty     | %FreeEventsAnalyzed-Bytes    | Yandex Audit Trails + Yandex DDoS Protection |
-| AmazonGuardDuty     | %PaidEventsAnalyzed-Bytes    | Yandex Audit Trails + Yandex DDoS Protection |
-| AmazonInspector     | %agent-assessments%          | None                                         |
-| AmazonInspector     | %network-assessments%        | None                                         |
-| AWSAmplify          | %DataTransferOut             | Yandex Cloud Apps                            |
-| AWSAmplify          | %BuildDuration               | Yandex Cloud Apps                            |
-| AWSBackup           | %EarlyDelete-Cold%           | Yandex Cloud Backup                          |
-| AWSBackup           | %Restore-Cold%               | Yandex Cloud Backup                          |
-| AWSBackup           | %ColdStorage%                | Yandex Cloud Backup                          |
-| AWSBackup           | %Restore-Warm%               | Yandex Cloud Backup                          |
-| AWSBackup           | %WarmStorage%                | Yandex Cloud Backup                          |
-| AmazonDAX           | %NodeUsage%                  | None                                         |
-| AmazonDynamoDB      |                              | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %WriteCapacityUnit-Hrs       | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %ReadCapacityUnit-Hrs        | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %RestoreDataSize-Bytes       | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %Streams-Requests            | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %WriteRequestUnits           | Yandex Managed Service for MongoDB           |
-| AmazonDynamoDB      | %ReadRequestUnits            | Yandex Managed Service for MongoDB           |
-| AmazonEKS           |                              | Yandex Managed Service for Kubernetes        |
-| AmazonEKS           | %Fargate-vCPU-Hours%         | Yandex Managed Service for Kubernetes        |
-| AmazonEKS           | %Fargate-GB-Hours            | Yandex Managed Service for Kubernetes        |
-| AmazonEKS           | %AmazonEKS-Hours:perCluster  | Yandex Managed Service for Kubernetes        |
-| AmazonSageMaker     | %Notebk:%                    | Yandex DataSphere                            |
-| AmazonSageMaker     | %Train:%                     | Yandex DataSphere                            |
-| AmazonSageMaker     | %Processing%                 | Yandex DataSphere                            |
-| AmazonSageMaker     | %Tsform%                     | Yandex DataSphere                            |
-| AmazonSageMaker     | %TrSpt%                      | Yandex DataSphere                            |
-| AmazonSageMaker     | %Host:%                      | Yandex DataSphere                            |
-| AmazonSageMaker     | %LabeledObject               | Yandex DataSphere                            |
+| IT Tower    | Service Family            | Service Type             | Service Sub Type                  | Service Usage Type                         | Product Code    | Usage Type                   |  [lineItem/Operation]    | lineItem/LineItemDescription | Analogue                                     |
+|-------------|---------------------------|--------------------------|-----------------------------------|--------------------------------------------|-----------------|------------------------------|--------------------------|------------------------------|----------------------------------------------|
+| Storage     | Management                | File System              | Storage                           | Throughput Capacity                        | AmazonFSx       | %ThroughputCapacity          | CreateFileSystem:Windows |                              | None                                         |
+| Storage     | Storage                   | Object Storage           | Storage                           | Storage                                    | AmazonFSx       | %Storage                     | CreateFileSystem:Windows |                              | None                                         |
+| Storage     | Backup                    | Data Protection          | Backup                            | Backup Usage                               | AmazonFSx       | %BackupUsage                 | CreateFileSystem:Windows |                              | None                                         |
+| Storage     | Management                | File System              | Storage                           | Data Transfer                              | AmazonFSx       | %DataTransfer-Regional-Bytes | CreateFileSystem:Windows |                              | None                                         |
+| Storage     | Shared Service            | Finance                  | Tax                               | Tax                                        | AmazonGlacier   |                              |                          | Tax%                         | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      |                                            | AmazonGlacier   | %Bytes                       |                          |                              | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      | Provisioned Capacity                       | AmazonGlacier   | %ProvisionedCapacityUnit     |                          |                              | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      | Storage Capacity Usage                     | AmazonGlacier   | %TimedStorage-ByteHrs        |                          |                              | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      | Access Requests                            | AmazonGlacier   | %Requests-Tier3              |                          |                              | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      | Access Requests                            | AmazonGlacier   | %Requests-Tier1              |                          |                              | Yandex Object Storage                        |
+| Storage     | Storage                   | Long-term data archiving | Cold Storage                      | Deletion of Archives                       | AmazonGlacier   | %EarlyDelete%                |                          |                              | Yandex Object Storage                        |
+| Security    | Shared Service            | Finance                  | Tax                               | Tax                                        | AmazonGuardDuty |                              |                          | Tax%                         | Yandex Audit Trails + Yandex DDoS Protection |
+| Security    | Threat detection services | GuardDuty                | Security & Compliance             | Monitoring & Threat detection              | AmazonGuardDuty | %FreeEventsAnalyzed          |                          |                              | Yandex Audit Trails + Yandex DDoS Protection |
+| Security    | Threat detection services | GuardDuty                | Security & Compliance             | Monitoring & Threat detection              | AmazonGuardDuty | %PaidEventsAnalyzed          |                          |                              | Yandex Audit Trails + Yandex DDoS Protection |
+| Security    | Threat detection services | GuardDuty                | Security & Compliance             | Event Analysis                             | AmazonGuardDuty | %FreeEventsAnalyzed-Bytes    |                          |                              | Yandex Audit Trails + Yandex DDoS Protection |
+| Security    | Threat detection services | GuardDuty                | Security & Compliance             | Event Analysis                             | AmazonGuardDuty | %PaidEventsAnalyzed-Bytes    |                          |                              | Yandex Audit Trails + Yandex DDoS Protection |
+| Security    | Threat detection services | Security & Compliance    | Threat & Vulnerability Management | Agent Assessments                          | AmazonInspector | %agent-assessments%          |                          |                              | None                                         |
+| Security    | Threat detection services | Security & Compliance    | Threat & Vulnerability Management | Network Assessments                        | AmazonInspector | %network-assessments%        |                          |                              | None                                         |
+| Application | Platform Service          | Application              | Message Bus & Integration         | Transfer data out                          | AWSAmplify      | %DataTransferOut             |                          |                              | Yandex Cloud Apps                            |
+| Application | Platform Service          | Application              | Application Hosting               | Build duration                             | AWSAmplify      | %BuildDuration               |                          |                              | Yandex Cloud Apps                            |
+| Storage     | Backup                    | Data Protection          | Backup                            | Early Delete Cold                          | AWSBackup       | %EarlyDelete-Cold%           |                          |                              | Yandex Cloud Backup                          |
+| Storage     | Backup                    | Data Protection          | Backup                            | Restore Cold                               | AWSBackup       | %Restore-Cold%               |                          |                              | Yandex Cloud Backup                          |
+| Storage     | Storage                   | Object Storage           | Backup                            | Cold Storage                               | AWSBackup       | %ColdStorage%                |                          |                              | Yandex Cloud Backup                          |
+| Storage     | Backup                    | Data Protection          | Backup                            | Restore Warm                               | AWSBackup       | %Restore-Warm%               |                          |                              | Yandex Cloud Backup                          |
+| Storage     | Storage                   | Object Storage           | Backup                            | Warm Storage                               | AWSBackup       | %WarmStorage%                |                          |                              | Yandex Cloud Backup                          |
+| Database    | Amazon DynamoDB           | Database                 | In-memory Database                | Data Store                                 | AmazonDAX       | %NodeUsage%                  |                          |                              | None                                         |
+| Platform    | Shared Service            | Finance                  | Tax                               | Tax                                        | AmazonDynamoDB  |                              |                          | Tax%                         | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Manage Write Capacity                      | AmazonDynamoDB  | %WriteCapacityUnit-Hrs       |                          |                              | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Manage Read Capacity                       | AmazonDynamoDB  | %ReadCapacityUnit-Hrs        |                          |                              | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Restore Data                               | AmazonDynamoDB  | %RestoreDataSize-Bytes       |                          |                              | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Request Streams                            | AmazonDynamoDB  | %Streams-Requests            |                          |                              | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Request Write                              | AmazonDynamoDB  | %WriteRequestUnits           |                          |                              | Yandex Managed Service for MongoDB           |
+| Platform    | Platform Service          | Data                     | Data Management                   | Request Read                               | AmazonDynamoDB  | %ReadRequestUnits            |                          |                              | Yandex Managed Service for MongoDB           |
+| Compute     | Shared Service            | Finance                  | Tax                               | Tax                                        | AmazonEKS       |                              |                          | Tax%                         | Yandex Managed Service for Kubernetes        |
+| Compute     | Infrastructure Services   | Compute                  | Virtual Compute & Containers      | Pricing per vCPU/hrs                       | AmazonEKS       | %Fargate-vCPU-Hours%         |                          |                              | Yandex Managed Service for Kubernetes        |
+| Compute     | Infrastructure Services   | Compute                  | Virtual Compute & Containers      | Pricing per GB/hrs                         | AmazonEKS       | %Fargate-GB-Hours            |                          |                              | Yandex Managed Service for Kubernetes        |
+| Compute     | Infrastructure Services   | Compute                  | Virtual Compute & Containers      | Pricing per hrs/cluster                    | AmazonEKS       | %AmazonEKS-Hours:perCluster  |                          |                              | Yandex Managed Service for Kubernetes        |
+| Compute     | Emerging                  |                          | Machine Learning                  | Set Notebook Instance                      | AmazonSageMaker | %Notebk:%                    |                          |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Train AI                                   | AmazonSageMaker | %Train:%                     |                          |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Process Data                               | AmazonSageMaker | %Processing%                 | RunInstance              |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Prepare data with advanced transformations | AmazonSageMaker | %Tsform%                     |                          |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Transport Data                             | AmazonSageMaker | %TrSpt%                      |                          |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Access Host Details                        | AmazonSageMaker | %Host:%                      |                          |                              | Yandex DataSphere                            |
+| Compute     | Emerging                  |                          | Machine Learning                  | Data Labeling                              | AmazonSageMaker | %LabeledObject               |                          |                              | Yandex DataSphere                            |
+
 
 ## Вывод
-Осуществление миграции с сервисов Amazon на Yandex Cloud затруднен не только из-за того, что некоторые сервисы не обладают точными аналогами, а по большей части из-за узкоспециализированной направленности многих сервисов Amazon.
+Осуществление миграции с сервисов Amazon на Yandex Cloud затруднено не только из-за того, что некоторые сервисы не обладают точными аналогами, а по большей части из-за узкоспециализированной направленности многих сервисов Amazon.
