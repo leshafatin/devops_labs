@@ -103,35 +103,9 @@
 ----
                     
 ## Итоговая таблица
-                    
-| Meter Category               | Meter Sub-Category        | Analogue                                           |
-| ---------------------------- | ------------------------- | -------------------------------------------------- |
-| Azure Marketplace            |                           | Yandex Cloud Marketplace                           |
-| Azure Site Recovery          |                           | Yandex Cloud Backup                                |
-| Cognitive Services           | QnA Maker                 | YandexGPT API                                      |
-| Container Instances          | QnA Maker                 | Yandex Serverless Containers                       |
-| Dynamics                     | Customer Insights         | Yandex DataLens                                    |
-| Event Grid                   |                           | Yandex Message Queue                               |
-| Identity                     | Active Directory B2C      | Yandex Identity and Access Management              |
-| IoT Hub                      |                           | Yandex IoT Core                                    |
-| Load Balancer                |                           | Yandex Network Load Balancer                       |
-| Load Balancer                |                           | Yandex Network Load Balancer                       |
-| Load Balancer                |                           | Yandex Network Load Balancer                       |
-| Media Services               |                           | Callaba Cloud                                      |
-| Virtual Machines             | Red Hat Enterprise Linux% | Программный комплекс средств виртуализации «Брест» |
-| Virtual Machines             | SQL Server%               | Yandex WebSQL                                      |
-| Virtual Machines             | BizTalk Server            | Yandex Tracker                                     |
-| Virtual Machines             | BizTalk Server Standard%  | Yandex Tracker                                     |
-| Virtual Machines             | Reservation%              | Резервируемое потребление в Yandex Cloud           |
-| Virtual Network              |                           | Yandex Virtual Private Cloud                       |
-| Visual Studio                | Team Services             | Yandex Tracker                                     |
-| Visual Studio                | Application Insights      | Proto Observability Platform                       |
-| Windows Azure - All Services | Read-Access Geo Redundant | Yandex Cloud Backup                                |
-| Windows Azure CDN            | Windows Azure CDN         | Yandex Cloud CDN                                   |
-| Windows Azure Service Bus    | Read-Access Geo Redundant | Yandex Cloud Backup                                |
-| Windows Azure Service Bus    | Read-Access Geo Redundant | Yandex Cloud Backup                                |
-| Windows Azure Storage        |                           | Yandex Object Storage                              |					
-					
+
+<img width="1422" alt="Screenshot 2024-01-12 at 21 28 09" src="https://github.com/leshafatin/devops_labs/assets/70691537/ddcf0975-bd51-42d2-8e49-b74415d579f3">
+                    								
 					
 
 ## Вывод
